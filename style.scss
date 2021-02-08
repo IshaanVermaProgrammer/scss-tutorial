@@ -1,0 +1,25 @@
+$color:orange;
+$text:white;
+body{
+    background-color: $color;
+}
+@mixin  textProperties($alignment) {
+    text:{
+        align:$alignment;
+        decoration:underline;
+        transform: uppercase;
+    }
+}
+h1{
+    color:$text;
+    margin-top: 5%;
+    //giving hover effect
+    /* can give all here only*/
+    &:hover{
+        color:black;
+    }
+   @include textProperties(right);
+}
+h2{
+    @extend h1;
+}
